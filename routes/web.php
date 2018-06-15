@@ -24,7 +24,7 @@ Route::group(['middleware'=>'admin'], function() {
 	Route::get('/admin', function() {
 		return view('admin.index');
 	});
-	
+
 	Route::resource('admin/users', 
 		'AdminUsersController',
 		['names' =>[
@@ -32,5 +32,14 @@ Route::group(['middleware'=>'admin'], function() {
 	        'create'=>'admin.users.create',
 	        'edit'=>'admin.users.edit',
 		]]
+	);
+
+	Route::resource('admin/posts',
+		'AdminPostsController',
+		['names'=>[
+	        'index'=>'admin.posts.index',
+	        'create'=>'admin.posts.create',
+	        'edit'=>'admin.posts.edit',
+    	]]
 	);
 });
