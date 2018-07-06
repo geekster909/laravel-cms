@@ -42,4 +42,14 @@ Route::group(['middleware'=>'admin'], function() {
 	        'edit'=>'admin.posts.edit',
     	]]
 	);
+
+	Route::resource('admin/categories', 
+		'AdminCategoriesController',
+		['names'=>[
+	        'index'=>'admin.categories.index',
+	        'create'=>'admin.categories.create',
+	        'edit'=>'admin.categories.edit'
+    	]]
+	);
+
 });
