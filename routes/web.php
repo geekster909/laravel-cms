@@ -52,4 +52,12 @@ Route::group(['middleware'=>'admin'], function() {
     	]]
 	);
 
+	Route::resource('admin/media', 
+		'AdminMediasController',
+		['names'=>[
+	        'index'=>'admin.media.index',
+	        'create'=>'admin.media.create'
+    	]]
+	);
+
 });
